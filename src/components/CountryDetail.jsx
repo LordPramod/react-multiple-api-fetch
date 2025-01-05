@@ -1,7 +1,6 @@
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { Box, Button, Heading, HStack, Image, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
 
 const CountryDetail = () => {
   const params = new URLSearchParams(location.search).get("name");
@@ -46,37 +45,35 @@ const CountryDetail = () => {
         >
           Back
         </Button>
-        <Box marginTop={"10px"}>
-          <Heading mb={"20px"}>{countryDetail.name}</Heading>
+        <Box
+          as="main"
+          boxShadow={"2xl"}
+          height={"400px"}
+          borderTopRadius={"10px"}
+          bg={"gray.200"}
+        >
+          <Box marginTop={"20px"} padding={"20px 40px"}>
+            <Heading mb={"20px"}>{countryDetail.name}</Heading>
+          </Box>
+          <HStack gap={"30px"} padding={"0px 40px"}>
+            <Box>
+              <Image
+                src={countryDetail.image}
+                border={"1px solid red"}
+                w={"450px"}
+                maxH={"450px"}
+                marginTop={"10px"}
+              ></Image>
+            </Box>
+            <Box ml={"30px"} fontSize={"customSmall"}>
+              <Text mb={"10px"}>Native Name : {countryDetail.nativeName}</Text>
+              <Text mb={"10px"}>Capital : {countryDetail.capital}</Text>
+              <Text mb={"10px"}>Population : {countryDetail.population}</Text>
+              <Text mb={"10px"}>Sub Region : {countryDetail.region}</Text>
+              <Text mb={"10px"}>Currencies : {countryDetail.currencies}</Text>
+            </Box>
+          </HStack>
         </Box>
-        <HStack gap={"30px"}>
-          <Box>
-            <Image
-              src={countryDetail.image}
-              border={"1px solid red"}
-              w={"450px"}
-              maxH={"450px"}
-              marginTop={"10px"}
-            ></Image>
-          </Box>
-          <Box ml={"30px"}>
-            <Text fontSize={"x-large"} mb={"10px"}>
-              Native Name : {countryDetail.nativeName}
-            </Text>
-            <Text fontSize={"x-large"} mb={"10px"}>
-              Capital : {countryDetail.capital}
-            </Text>
-            <Text fontSize={"x-large"} mb={"10px"}>
-              Population : {countryDetail.population}
-            </Text>
-            <Text fontSize={"x-large"} mb={"10px"}>
-              Sub Region : {countryDetail.region}
-            </Text>
-            <Text fontSize={"x-large"} mb={"10px"}>
-              Currencies : {countryDetail.currencies}
-            </Text>
-          </Box>
-        </HStack>
       </Box>
     </>
   );

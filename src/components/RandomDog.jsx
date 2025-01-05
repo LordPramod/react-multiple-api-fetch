@@ -1,14 +1,21 @@
 import { Button, Card, CardBody, CardFooter, Image } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function RandomDog() {
   const [dogData, setDogData] = useState([]);
 
-  const dogFetch = async () => {
-    const response = await fetch("https://dog.ceo/api/breeds/image/random");
-    const data = await response.json();
-    setDogData(data.message);
-    console.log(dogData);
+  useEffect(() => {
+    const dogFetch = async () => {
+      const response = await fetch("https://dog.ceo/api/breeds/image/random");
+      const data = await response.json();
+      setDogData(data.message);
+      console.log(data.message);
+    };
+    dogFetch();
+  }, []);
+
+  const handleClick = () => {
+    setDogData([]);
   };
   return (
     <>
@@ -17,7 +24,7 @@ function RandomDog() {
           <Image src={dogData}></Image>
         </CardBody>
         <CardFooter>
-          <Button colorScheme="purple" onClick={dogFetch}>
+          <Button colorScheme="purple" onClick={handleClick}>
             Generate Another
           </Button>
         </CardFooter>

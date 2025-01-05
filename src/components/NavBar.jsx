@@ -10,12 +10,13 @@ function NavBar() {
 
   return (
     <>
-      <Grid templateColumns={"repeat(6, 1fr)"} p={"5px"} minH={"100vh"}>
+      <Grid templateColumns={"repeat(6, 1fr)"} minH={"100vh"}>
         <GridItem
+          boxShadow={"xl"}
           colSpan={1}
-          bg={"purple.500"}
+          bg={"custom.100"}
           position={"sticky"}
-          top={"5px"}
+          top={"0px"}
           height={"calc(100vh - 10px)"}
           zIndex={2}
         >
@@ -25,37 +26,36 @@ function NavBar() {
             display="flex"
             gap="30px"
             padding={"20px"}
-            fontSize={"large"}
-            color={"gray.100"}
+            fontSize={"customSmallest"}
+            color={"custom.400"}
             fontWeight={"semibold"}
             mt={"30px"}
             fontFamily={"sans-serif"}
           >
             <NavLink to={"/"}>
               <Flex align="center" gap="2px">
-                <Text> Dashboard</Text>
+                <Text _hover={{ color: "white" }}> Dashboard</Text>
               </Flex>
             </NavLink>
             <NavLink to={"/dog"}>
               <Flex align="center" gap="2">
-                <Text>Dog Image Generator</Text>
+                <Text _hover={{ color: "white" }}>Dog Image Generator</Text>
               </Flex>
             </NavLink>
             <NavLink to={"/country"}>
               <Flex align="center" gap="2">
-                <Text>Country Information</Text>
+                <Text _hover={{ color: "white" }}>Country Information</Text>
               </Flex>
             </NavLink>
             <NavLink to={"/products"}>
               <Flex align="center" gap="2">
-                <Text>FakeStore Products</Text>
+                <Text _hover={{ color: "white" }}>FakeStore Products</Text>
               </Flex>
             </NavLink>
           </Box>
         </GridItem>
         <GridItem
           colSpan={5}
-          border={"1px solid"}
           bg={"gray.50"}
           display={"flex"}
           flexDirection={"column"}
@@ -64,11 +64,13 @@ function NavBar() {
           overflow="hidden"
         >
           <GridItem
-            bg="purple.400"
+            bg="custom.100"
             p={"10px"}
             position="sticky"
             top={0}
             zIndex={1}
+            color={"whiteAlpha.900"}
+            boxShadow={"xl"}
           >
             <Header />
           </GridItem>
