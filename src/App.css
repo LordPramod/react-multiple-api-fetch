@@ -1,0 +1,21 @@
+*{ box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+/* .active {
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+} */
+
+.active {
+    background-color: #6a4cb3; 
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    border: none; 
+    font-weight: bold; 
+    text-align: center; 
+}
